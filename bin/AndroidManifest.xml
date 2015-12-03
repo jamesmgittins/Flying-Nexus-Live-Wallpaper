@@ -1,0 +1,28 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.jamesmgittins.livewallpaper.flyingnexus"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="7"
+        android:targetSdkVersion="17" />
+    <uses-feature android:name="android.software.live_wallpaper" />
+    
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        
+        <service android:label="@string/app_name" android:name="com.jamesmgittins.livewallpaper.flyingnexus.StarFieldWallpaper"
+			android:permission="android.permission.BIND_WALLPAPER" android:icon="@drawable/ic_launcher">
+			<intent-filter>
+				<action android:name="android.service.wallpaper.WallpaperService" />
+			</intent-filter>
+			<meta-data android:name="android.service.wallpaper"
+				android:resource="@xml/psychedelicwallpaper" />
+		</service>
+		
+    </application>
+
+</manifest>
